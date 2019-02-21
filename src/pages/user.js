@@ -1,6 +1,9 @@
 import React from 'react';
 
  export default class List extends React.Component{
+    componentDidMount() {
+        console.log(this.props.match.params);
+    }
     render() {
         return(
             <div>
