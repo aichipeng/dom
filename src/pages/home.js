@@ -4,13 +4,13 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props)
     }
-    // navigateTo = (path) =>{
-    //     console.log(path)
-    // };
-    navigateTo(path) {
+    navigateTo = (path) =>{
         console.log(path)
-        this.props.history.push(path)
-    }
+    };
+    // navigateTo(path) {
+    //     console.log(path)
+    //     this.props.history.push(path)
+    // }
     render() {
         return (
             <div>
