@@ -6,7 +6,7 @@ module.exports = {
     mode: 'production',
     //项目入口
     entry: {
-        main: './src/index.jsx'
+        main: './src/index.js'
     },
     //出口设置
     output: {
