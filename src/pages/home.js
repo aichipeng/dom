@@ -6,6 +6,7 @@ export default class Home extends React.Component {
     }
     navigateTo = (path) =>{
         console.log(path)
+        this.props.history.push(path)
     };
     // navigateTo(path) {
     //     console.log(path)
