@@ -17,7 +17,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/, // test 去判断是否为.js或.jsx,是的话就是进行es6和jsx的编译
+                test: /\.js|jsx$/, // test 去判断是否为.js或.jsx,是的话就是进行es6和jsx的编译
                 exclude: /node_modules/,
                 use: [{
                     loader: 'babel-loader',
@@ -25,6 +25,37 @@ module.exports = {
                     //     presets: ["env", "react"]
                     // }
                 }]
+            },
+            {
+                test: /\.scss$/,
+                use: [{
+                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
+                }, {
+                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+                }, {
+                    loader: "sass-loader" // 将 Sass 编译成 CSS
+                }]
+            },
+            {   //使用css配置
+                test: /\.css$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                //使用less配置
+                test: /\.less$/,
+                loader: "style-loader!css-loader"
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                            name: 'images/[hash].[ext]',//所有图片在一个目录
+                        }
+                    }
+                ]
             }
         ]
     },
